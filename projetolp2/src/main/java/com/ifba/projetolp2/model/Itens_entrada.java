@@ -5,11 +5,23 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "itensEntrada")
 public class Itens_entrada {
+    @Id
     private Long idItensEntrada;
     private int idProduto;
     private int quantidade;
     private double valorUnitario;
 
+    @ManyToOne
+    @JoinColumn(name = "id_entrada_fk") // chave estrangeira
+    private Entrada entrada;
+
+    public Entrada getEntrada() {
+        return entrada;
+    }
+    public void setEntrada(Entrada entrada) {
+        this.entrada = entrada;
+    }
+    
     public Long getIdItensEntreda(){
         return this.idItensEntrada;
     }
