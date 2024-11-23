@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "entrada")
-public class Entrada extends AbstractEntity{
+public class Entrada extends AbstractEntity<Long>{
     //private Long idEntrada;
     private String data;
     private double valor;
