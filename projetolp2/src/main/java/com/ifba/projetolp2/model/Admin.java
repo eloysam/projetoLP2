@@ -1,6 +1,6 @@
 package com.ifba.projetolp2.model;
 
-import jakarta.persistence.*;
+//import jakarta.persistence.*;
 
 public class Admin extends Usuario{
     private String loginAdmin;
