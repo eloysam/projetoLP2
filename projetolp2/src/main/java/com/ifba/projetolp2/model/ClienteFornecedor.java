@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "clienteFornecedor")
 public class ClienteFornecedor extends AbstractEntity<Long> {
-    @Id
     private String endereco;
     private String infoCartao;
     private String infoEnvios;

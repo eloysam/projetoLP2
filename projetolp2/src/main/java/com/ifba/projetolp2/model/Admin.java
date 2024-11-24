@@ -2,8 +2,6 @@ package com.ifba.projetolp2.model;
 
 import jakarta.persistence.*;
 
-@Entity
-@Table(name = "administrador")
 public class Admin extends Usuario{
     private String loginAdmin;
 
