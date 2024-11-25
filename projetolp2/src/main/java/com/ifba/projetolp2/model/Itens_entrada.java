@@ -4,9 +4,8 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "itensEntrada")
-public class Itens_entrada {
-    @Id
-    private Long idItensEntrada;
+public class Itens_entrada extends AbstractEntity<Long>{
+    
     private int idProduto;
     private int quantidade;
     private double valorUnitario;
