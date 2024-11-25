@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "estoque")
-public class Estoque {
+public class Estoque extends AbstractEntity<Long>{
     private String categoria;
     private String nomeProduto;
     private String qtdProduto;
