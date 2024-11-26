@@ -1,44 +1,30 @@
 package com.ifba.projetolp2.model;
 
+import java.util.List;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "estoque")
 public class Estoque extends AbstractEntity<Long>{ // extender de produto, atibutos para produto
-    private String categoria;
-    private String nomeProduto; 
+     
     private String qtdProduto;
-    private String dataFabricacao;
-    private String dataValidade;
 
-    public String getCategoria(){
-        return this.categoria;
-    }
-    public void setCategoria(String categoria){
-        this.categoria = categoria;
-    }
-    public String getNomeProduto(){
-        return this.nomeProduto;
-    }
-    public void setNomeProduto(String nomeProduto){
-        this.nomeProduto = nomeProduto;
-    }
+    @OneToMany(mappedBy = "estoque")
+    private List<Produto> produtos; // lista de produtos
+
     public String getQtdProduto(){
         return this.qtdProduto;
     }
     public void setQtdProduto(String qtdProduto){
         this.qtdProduto = qtdProduto;
     }
-    public String getDataFabricacao(){
-        return this.dataFabricacao;
+    
+    public List<Produto> getProdutos() {
+        return produtos;
     }
-    public void setDataFabricacao(String dataFabricacao){
-        this.dataFabricacao = dataFabricacao;
+    public void setProdutos(List<Produto> produtos) {
+        this.produtos = produtos;
     }
-    public String getDataValidade(){
-        return this.dataValidade;
-    }
-    public void setDataValidade (String dataValidade){
-        this.dataValidade = dataValidade;
-    }
+    
+    
 }

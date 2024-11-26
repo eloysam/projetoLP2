@@ -21,12 +21,6 @@ public class Itens_entrada extends AbstractEntity<Long>{
         this.entrada = entrada;
     }
     
-    public Long getIdItensEntreda(){
-        return this.idItensEntrada;
-    }
-    public void setIdItensEntreda(Long idItensEntrada){
-        this.idItensEntrada = idItensEntrada;
-    }
     public int getIdProduto(){
         return this.idProduto;
     }
