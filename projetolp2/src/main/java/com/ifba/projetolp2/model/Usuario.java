@@ -10,6 +10,7 @@ import lombok.Data;
 public class Usuario extends AbstractEntity<Long> {
     @Column
     private String nome;
+    private boolean tipoUsuario;
     private int senha;
     private Date dataCadastro;
 
