@@ -24,4 +24,6 @@ public class ItensEntradaService {
     public void excluir(Long id){
         repItEn.deleteById(id);
     }
+
+    
 }

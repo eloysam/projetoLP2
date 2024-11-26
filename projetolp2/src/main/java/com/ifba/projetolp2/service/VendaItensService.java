@@ -24,4 +24,7 @@ public class VendaItensService {
     public void excluir(Long id){
         repVenIt.deleteById(id);
     }
+
+    public void retirarItens(){
+    }
 }

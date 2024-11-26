@@ -28,6 +28,12 @@ public class ProdutoService {
         repPro.deleteById(id);
     }
 
+    /*public void controleEstoque(Long idProduto, int qtdProduto){
+        Produto pd = buscarPorId(idProduto);
+        pd.set
+        
+    }*/
+
     public Optional<Produto> buscarPorId(Long id){
         return repPro.findById(id);
     }

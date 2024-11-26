@@ -1,12 +1,13 @@
 package com.ifba.projetolp2.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Entity
 @Table(name = "itensEntrada")
+@Data
 public class Itens_entrada extends AbstractEntity<Long>{
     
-    private int idProduto;
     private int quantidade;
     private double valorUnitario;
 
@@ -14,31 +15,9 @@ public class Itens_entrada extends AbstractEntity<Long>{
     @JoinColumn(name = "id_entrada_fk") // chave estrangeira
     private Entrada entrada;
 
-    public Entrada getEntrada() {
-        return entrada;
-    }
-    public void setEntrada(Entrada entrada) {
-        this.entrada = entrada;
-    }
-    
-    public int getIdProduto(){
-        return this.idProduto;
-    }
-    public void setIdProduto(int idProduto){
-        this.idProduto = idProduto;
-    }
-    public int getQuantidade(){
-        return this.quantidade;
-    }
-    public void setQuantidade(int quantidade){
-        this.quantidade = quantidade;
-    }
-    public double getValorUnitario(){
-        return this.valorUnitario;
-    }
-    public void setValorUnitario(double valorUnitario){
-        this.valorUnitario = valorUnitario;
-    }
+    @ManyToOne()
+    private Produto idProduto;
+
 
     @Override
     public String toString() {

@@ -1,40 +1,16 @@
 package com.ifba.projetolp2.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Entity
 @Table(name = "venda")
+@Data
 public class Venda extends AbstractEntity<Long>{
-    @Id
-    private Long idVenda;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idVendedor;
     private double valorVenda;
     private String dataVenda;
-
-    public Long getIdVenda(){
-        return this.idVenda;
-    }
-    public void setIdVenda(Long idVenda){
-        this.idVenda = idVenda;
-    }
-    public Long getIdVendedor(){
-        return this.idVendedor;
-    }
-    public void setIdVendedor(Long idVendedor){
-        this.idVendedor = idVendedor;
-    }
-    public double getValorVenda(){
-        return this.valorVenda;
-    }
-    public void setValorVenda(double valorVenda){
-        this.valorVenda = valorVenda;
-    }
-    public String getDataVenda(){
-        return this.dataVenda;
-    }
-    public void setDataVenda(String dataVenda){
-        this.dataVenda = dataVenda;
-    }
 
     @Override
     public String toString() {
