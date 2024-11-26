@@ -11,14 +11,13 @@ public class Entrada extends AbstractEntity<Long>{
     //private Long idEntrada;
     private String data;
     private double valor;
-    private Admin idAdmin;
 
     @OneToMany(mappedBy = "entrada")
     private List<Itens_entrada> itensEntrada;
     
     @Override
     public String toString() {
-        return "Entrada [data=" + data + ", valor=" + valor + ", idAdmin=" + idAdmin + ", itensEntrada=" + itensEntrada
+        return "Entrada [data=" + data + ", valor=" + valor + ", itensEntrada=" + itensEntrada
                 + "]";
     }
 
