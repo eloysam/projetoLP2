@@ -14,9 +14,9 @@ public class Produto extends AbstractEntity<Long>{
     private String dataValidade;
     private String qtdProduto;
 
-    @ManyToOne
+    /*@ManyToOne
     @JoinColumn(name = "id_estoque_fk")
-    private Estoque estoque;
+    private Estoque estoque;*/
 
     @Override
     public String toString() {
