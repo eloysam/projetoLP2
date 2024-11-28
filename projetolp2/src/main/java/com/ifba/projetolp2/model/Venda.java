@@ -1,5 +1,6 @@
 package com.ifba.projetolp2.model;
 
+import java.util.List;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -11,6 +12,9 @@ public class Venda extends AbstractEntity<Long>{
     private Long idVendedor;
     private double valorVenda;
     private String dataVenda;
+
+    @OneToMany(mappedBy = "venda")
+    private List<VendaItens> vendaItens; 
 
     @Override
     public String toString() {

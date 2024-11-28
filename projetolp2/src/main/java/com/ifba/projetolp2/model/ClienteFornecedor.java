@@ -1,5 +1,7 @@
 package com.ifba.projetolp2.model;
 
+import java.util.List;
+
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -11,7 +13,9 @@ public class ClienteFornecedor extends AbstractEntity<Long> {
     private String infoCartao;
     private String infoEnvios;
     private double saldo;
-    
+
+    @OneToMany(mappedBy = "clienteFornecedor")
+    private List<Venda> vendas;
     
     @Override
     public String toString() {

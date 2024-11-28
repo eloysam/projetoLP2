@@ -1,5 +1,8 @@
 package com.ifba.projetolp2.service;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,5 +26,13 @@ public class UsuarioService {
 
     public void excluir(Long id){
         repUs.deleteById(id);
+    }
+
+    public Optional<Usuario> buscarPorId(Long id){ //serve para representar valores que podem estar presentes ou ausentes (nulos)
+        return repUs.findById(id);
+    }
+
+    public List<Usuario> buscarTodos(){
+        return repUs.findAll();
     }
 }

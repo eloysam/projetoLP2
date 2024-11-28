@@ -14,6 +14,10 @@ public class Usuario extends AbstractEntity<Long> {
     private int senha;
     private Date dataCadastro;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_clienteFor_fk")
+    private ClienteFornecedor clienteFor;
+
     @Override
     public String toString() {
         return "Usuario [nome=" + nome + ", senha=" + senha + ", dataCadastro=" + dataCadastro + "]";

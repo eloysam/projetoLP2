@@ -11,12 +11,19 @@ public class VendaItens extends AbstractEntity<Long> {
     private int valorUnitario;
     private int quantidade;
     private double valorTotal;
-    Venda idVenda = new Venda();
+   
+    @ManyToOne
+    @JoinColumn(name = "id_venda_fk")
+    private Venda venda;
     
+    @ManyToOne
+    @JoinColumn(name = "id_produto_fk")
+    private Produto produto;
+
     @Override
     public String toString() {
         return "VendaItens [nomeProduto=" + nomeProduto + ", valorUnitario=" + valorUnitario + ", quantidade="
-                + quantidade + ", valorTotal=" + valorTotal + ", idVenda=" + idVenda + "]";
+                + quantidade + ", valorTotal=" + valorTotal +  "]";
     }
 
     

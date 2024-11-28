@@ -15,7 +15,8 @@ public class Itens_entrada extends AbstractEntity<Long>{
     @JoinColumn(name = "id_entrada_fk") // chave estrangeira
     private Entrada entrada;
 
-    @ManyToOne()
+    @ManyToOne
+    @JoinColumn(name = "id_produto_fk")
     private Produto idProduto;
 
 
