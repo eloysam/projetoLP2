@@ -37,9 +37,9 @@ public class Projetolp2Application {
 			en.setValor(1200.30);
 
 			Itens_entrada itEn = new Itens_entrada();
-			itEn.setEntrada(null);
+			//itEn.setEntrada(null);
 			itEn.setId(Long.valueOf(1));
-			itEn.setIdProduto(null);
+			//itEn.setIdProduto(null);
 			itEn.setQuantidade(123);
 			itEn.setValorUnitario(12.20);
 			itEnrep.save(itEn);
