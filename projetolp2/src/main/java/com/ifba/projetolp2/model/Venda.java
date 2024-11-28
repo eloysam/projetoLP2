@@ -9,7 +9,9 @@ import lombok.Data;
 @Data
 public class Venda extends AbstractEntity<Long>{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false, unique = true, length = 10)
     private Long idVendedor;
+    @Column(nullable = false, unique = true, length = 60)
     private double valorVenda;
     private String dataVenda;
 
