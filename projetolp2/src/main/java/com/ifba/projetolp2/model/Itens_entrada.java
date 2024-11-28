@@ -8,22 +8,24 @@ import lombok.Data;
 @Data
 public class Itens_entrada extends AbstractEntity<Long>{
     
+    @Column
     private int quantidade;
+    @Column
     private double valorUnitario;
-
-    @ManyToOne 
+    
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_entrada_fk") // chave estrangeira
     private Entrada entrada;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_produto_fk")
-    private Produto idProduto;
+    private Produto produto;
 
-
+    /*
     @Override
     public String toString() {
-        return "ItensEntrada [idProduto=" + idProduto + ", quantidade=" + quantidade + ", valorUnitario="
+        return "ItensEntrada [idProduto=" + produto + ", quantidade=" + quantidade + ", valorUnitario="
                 + valorUnitario + "]";
     }
-
+    */
 }

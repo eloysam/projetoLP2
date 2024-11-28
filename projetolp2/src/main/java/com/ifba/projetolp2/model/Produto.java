@@ -9,17 +9,21 @@ import lombok.Data;
 @Table(name = "produto")
 @Data
 public class Produto extends AbstractEntity<Long>{
-    
+    @Column
     private String categoria;
+    @Column
     private String nomeProduto;
+    @Column
     private Date dataFabricacao;
+    @Column
     private Date dataValidade;
+    @Column
     private int qtdProduto;
 
-    @OneToMany(mappedBy = "produto")
+    @OneToMany(mappedBy = "produto", cascade = CascadeType.ALL)
     private List<Itens_entrada> itens_entrada;
 
-    @OneToMany(mappedBy = "produto")
+    @OneToMany(mappedBy = "produto", cascade = CascadeType.ALL)
     private List<VendaItens> vendaIt;
 
     @Override
