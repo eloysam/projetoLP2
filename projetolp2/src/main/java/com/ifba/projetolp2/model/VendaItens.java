@@ -13,7 +13,7 @@ public class VendaItens extends AbstractEntity<Long> {
     private double valorTotal;
    
     @ManyToOne
-    @JoinColumn(name = "id_venda_fk")
+    @JoinColumn(name = "id_venda_fk") // criando uma chave estrangeira venda na tabela do banco de dados vendaItens
     private Venda venda;
     
     @ManyToOne

@@ -12,7 +12,7 @@ public class Entrada extends AbstractEntity<Long>{
     private String data;
     private double valor;
 
-    @OneToMany(mappedBy = "entrada")
+    @OneToMany(mappedBy = "entrada") // por na outra classe haver um atributo com o @joincolunm, esse relacionamento é bidimencional
     private List<Itens_entrada> itensEntrada;
     
     @Override

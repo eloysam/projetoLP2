@@ -14,7 +14,7 @@ public class ClienteFornecedor extends AbstractEntity<Long> {
     private String infoEnvios;
     private double saldo;
 
-    @OneToMany(mappedBy = "clienteFornecedor")
+    @OneToMany(mappedBy = "clienteFornecedor") // é um relacionamento unidimencional
     private List<Venda> vendas;
     
     @Override
