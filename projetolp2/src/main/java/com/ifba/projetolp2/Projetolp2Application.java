@@ -19,7 +19,11 @@ public class Projetolp2Application {
 		return (args) -> {
 
 			Venda v = new Venda();
+			v.setId(Long.valueOf(1));
+			v.setIdVendedor(Long.valueOf(3));
 			v.setValorVenda(59.6);
+			v.setDataVenda("23/12/23");
+			//v.setVendaItens("shampoo", "sabonete");
 			repVen.save(v);
 
 			System.out.println(repVen.findAll());
