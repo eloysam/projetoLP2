@@ -30,7 +30,8 @@ public class Projetolp2Application {
 			v.setValorVenda(59.6);
 			v.setDataVenda("23/12/23");
 			serVen.salvar(v);
-/*/
+			System.out.println("Listagem das vendas: " + serVen.buscarTodos());
+
 			Entrada en = new Entrada();
 			en.setData("23/10/24");
 			en.setId(Long.valueOf(2));
@@ -44,9 +45,7 @@ public class Projetolp2Application {
 			itEn.setValorUnitario(12.20);
 			itEnrep.save(itEn);
 
-			System.out.println(serVen.buscarTodos());
-
-*/
+			//System.out.println(serVen.buscarTodos());
 		};
 	}
 
