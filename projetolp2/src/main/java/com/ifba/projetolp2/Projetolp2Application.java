@@ -8,10 +8,9 @@ import org.springframework.context.annotation.Bean;
 import com.ifba.projetolp2.model.Entrada;
 import com.ifba.projetolp2.model.Itens_entrada;
 import com.ifba.projetolp2.model.Venda;
-import com.ifba.projetolp2.repository.IEntradaRepository;
-import com.ifba.projetolp2.repository.IProdutoRepository;
-import com.ifba.projetolp2.repository.IVendaRepository;
-import com.ifba.projetolp2.repository.Iitens_entradaRepository;
+import com.ifba.projetolp2.service.EntradaService;
+import com.ifba.projetolp2.service.ItensEntradaService;
+import com.ifba.projetolp2.service.ProdutoService;
 import com.ifba.projetolp2.service.VendaService;
 
 @SpringBootApplication
@@ -22,7 +21,7 @@ public class Projetolp2Application {
 	}
 
 	@Bean
-	public CommandLineRunner demo(VendaService serVen, Iitens_entradaRepository itEnrep, IProdutoRepository proRep, IEntradaRepository entRep) {
+	public CommandLineRunner demo(VendaService serVen, ItensEntradaService serItEn, ProdutoService serPro, EntradaService serEnt) {
 		return (args) -> {
 
 			Venda v = new Venda();
@@ -30,11 +29,14 @@ public class Projetolp2Application {
 			v.setValorVenda(59.6);
 			v.setDataVenda("23/12/23");
 			serVen.salvar(v);
-/*/
+			serVen.atualizar(v);
+
 			Entrada en = new Entrada();
 			en.setData("23/10/24");
 			en.setId(Long.valueOf(2));
 			en.setValor(1200.30);
+			serEnt.salvar(en);
+			serEnt.atualizar(en);
 
 			Itens_entrada itEn = new Itens_entrada();
 			//itEn.setEntrada(null);
@@ -42,11 +44,11 @@ public class Projetolp2Application {
 			//itEn.setIdProduto(null);
 			itEn.setQuantidade(123);
 			itEn.setValorUnitario(12.20);
-			itEnrep.save(itEn);
+			serItEn.salvar(itEn);
+			serItEn.atualizar(itEn);
 
 			System.out.println(serVen.buscarTodos());
 
-*/
 		};
 	}
 
