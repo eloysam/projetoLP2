@@ -12,6 +12,7 @@ import com.ifba.projetolp2.repository.IEntradaRepository;
 import com.ifba.projetolp2.repository.IProdutoRepository;
 import com.ifba.projetolp2.repository.IVendaRepository;
 import com.ifba.projetolp2.repository.Iitens_entradaRepository;
+import com.ifba.projetolp2.service.VendaService;
 
 @SpringBootApplication
 public class Projetolp2Application {
@@ -21,16 +22,15 @@ public class Projetolp2Application {
 	}
 
 	@Bean
-	public CommandLineRunner demo(IVendaRepository repVen, Iitens_entradaRepository itEnrep, IProdutoRepository proRep, IEntradaRepository entRep) {
+	public CommandLineRunner demo(VendaService serVen, Iitens_entradaRepository itEnrep, IProdutoRepository proRep, IEntradaRepository entRep) {
 		return (args) -> {
 
 			Venda v = new Venda();
 			v.setId(Long.valueOf(2));
-			v.setIdVendedor(Long.valueOf(4));
 			v.setValorVenda(59.6);
 			v.setDataVenda("23/12/23");
-			repVen.save(v);
-
+			serVen.salvar(v);
+/*/
 			Entrada en = new Entrada();
 			en.setData("23/10/24");
 			en.setId(Long.valueOf(2));
@@ -44,9 +44,9 @@ public class Projetolp2Application {
 			itEn.setValorUnitario(12.20);
 			itEnrep.save(itEn);
 
-			System.out.println(repVen.findAll());
+			System.out.println(serVen.buscarTodos());
 
-
+*/
 		};
 	}
 

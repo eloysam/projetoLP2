@@ -10,13 +10,12 @@ import lombok.Data;
 public class Usuario extends AbstractEntity<Long> {
     @Column
     private String nome;
-    private boolean tipoUsuario;
+    @Column
+    private String tipoUsuario;
+    @Column
     private int senha;
+    @Column
     private Date dataCadastro;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_clienteFor_fk")
-    private ClienteFornecedor clienteFor;
 
     @Override
     public String toString() {

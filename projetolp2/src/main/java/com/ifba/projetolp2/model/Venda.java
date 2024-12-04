@@ -8,18 +8,17 @@ import lombok.Data;
 @Table(name = "venda")
 @Data
 public class Venda extends AbstractEntity<Long>{
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false, unique = true, length = 10)
-    private Long idVendedor;
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@Column(nullable = false, unique = true, length = 10)
+    //private Long idVendedor;
+    
     @Column(nullable = false, unique = true, length = 60)
     private double valorVenda;
+    @Column
     private String dataVenda;
 
-    @OneToMany(mappedBy = "venda")
+    @OneToMany(mappedBy = "venda", cascade = CascadeType.ALL)
     private List<VendaItens> vendaItens; 
 
-    @Override
-    public String toString() {
-        return "Venda [idVendedor=" + idVendedor + ", valorVenda=" + valorVenda + ", dataVenda=" + dataVenda + "]";
-    }
+
 }

@@ -7,20 +7,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.ifba.projetolp2.model.ClienteFornecedor;
-import com.ifba.projetolp2.repository.ICliFornecedorRepository;
+import com.ifba.projetolp2.model.Fornecedor;
+import com.ifba.projetolp2.repository.IFornecedorRepository;
 
 @Service
 @Transactional(readOnly = false)
-public class CliFornecedorService {
+public class FornecedorService {
     @Autowired
-    private ICliFornecedorRepository repCliFornecedor;
+    private IFornecedorRepository repCliFornecedor;
 
-    public void salvar(ClienteFornecedor cliF){
+    public void salvar(Fornecedor cliF){
         repCliFornecedor.save(cliF);
     }
 
-    public void atualizar(ClienteFornecedor cliF){
+    public void atualizar(Fornecedor cliF){
         repCliFornecedor.save(cliF);
     }
 
@@ -28,11 +28,11 @@ public class CliFornecedorService {
         repCliFornecedor.deleteById(id);
     }
 
-    public Optional<ClienteFornecedor> buscarPorId(Long id){
+    public Optional<Fornecedor> buscarPorId(Long id){
         return repCliFornecedor.findById(id);
     }
 
-    public List<ClienteFornecedor> buscarTodos(){
+    public List<Fornecedor> buscarTodos(){
         return repCliFornecedor.findAll();
     } 
 }
