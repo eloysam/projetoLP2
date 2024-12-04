@@ -1,5 +1,6 @@
 package com.ifba.projetolp2.model;
 
+import java.util.Date;
 import java.util.List;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -11,9 +12,9 @@ public class Produto extends AbstractEntity<Long>{
     
     private String categoria;
     private String nomeProduto;
-    private String dataFabricacao;
-    private String dataValidade;
-    private String qtdProduto;
+    private Date dataFabricacao;
+    private Date dataValidade;
+    private int qtdProduto;
 
     @OneToMany(mappedBy = "produto")
     private List<Itens_entrada> itens_entrada;
