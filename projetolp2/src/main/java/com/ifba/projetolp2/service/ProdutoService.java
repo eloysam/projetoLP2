@@ -36,22 +36,25 @@ public class ProdutoService {
         return repPro.findAll();
     }
 
-    /*public void controlarEstoque(Long idProduto, int quantidadeRetirada) {
-        Produto produto = buscarPorId(idProduto);
+    public void controlarEstoque(Long idProduto, int qtdRetirada) {
+        Optional<Produto> produtoOptional = buscarPorId(idProduto); // Busca o produto no repositório utilizando o ID fornecido e encapsula o resultado em um Optional
 
-        if (produto != null) {
-            int estoqueAtual = produto.getQtdProduto();
+        if (produtoOptional.isPresent()) { // Verifica se o produto foi encontrado no Optional, o isPresente -> é usado em Java para verificar se um objeto encapsulado em um Optional está presente ou não retornando um valor bool
+            Produto produto = produtoOptional.get(); // Extrai o objeto Produto do Optional
+            int estoqueAtual = produto.getQtdProduto(); // Obtém a quantidade atual do produto em estoque
 
-            if (estoqueAtual >= quantidadeRetirada) {
-                produto.setQtdProduto(estoqueAtual - quantidadeRetirada);
-                atualizar(produto);
+            if (estoqueAtual >= qtdRetirada) { // Verifica se há estoque suficiente para a quantidade a ser retirada
+                produto.setQtdProduto(estoqueAtual - qtdRetirada); // atualiza o valor do estoque
+                atualizar(produto); // salva as mudanças
                 System.out.println("Estoque atualizado com sucesso. Estoque restante: " + produto.getQtdProduto());
-            } else {
+            } 
+            else {
                 System.out.println("Estoque insuficiente. Quantidade disponível: " + estoqueAtual);
             }
-        } else {
+        } 
+        else {
             System.out.println("Produto não encontrado.");
         }
-    }*/
+    }
 
 }
