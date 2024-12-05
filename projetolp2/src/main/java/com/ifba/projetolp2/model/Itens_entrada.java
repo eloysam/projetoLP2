@@ -13,11 +13,11 @@ public class Itens_entrada extends AbstractEntity<Long>{
     @Column
     private double valorUnitario;
     
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "id_entrada_fk") // chave estrangeira
     private Entrada entrada;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "id_produto_fk")
     private Produto produto;
 

@@ -12,12 +12,12 @@ public class Venda extends AbstractEntity<Long>{
     //@Column(nullable = false, unique = true, length = 10)
     //private Long idVendedor;
     
-    @Column(nullable = false, unique = true, length = 60)
+    @Column(nullable = false)
     private double valorVenda;
     @Column
     private String dataVenda;
 
-    @OneToMany(mappedBy = "venda", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "venda")
     private List<VendaItens> vendaItens; 
 
 

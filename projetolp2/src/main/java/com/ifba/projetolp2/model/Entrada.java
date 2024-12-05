@@ -14,7 +14,7 @@ public class Entrada extends AbstractEntity<Long>{
     @Column
     private double valor;
 
-    @OneToMany(mappedBy = "entrada", cascade = CascadeType.ALL) // por na outra classe haver um atributo com o @joincolunm, esse relacionamento é bidimencional
+    @OneToMany(mappedBy = "entrada") // por na outra classe haver um atributo com o @joincolunm, esse relacionamento é bidimencional
     private List<Itens_entrada> itensEntrada;
     
     @Override

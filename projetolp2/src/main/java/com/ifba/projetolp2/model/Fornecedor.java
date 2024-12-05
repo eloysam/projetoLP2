@@ -20,9 +20,9 @@ public class Fornecedor extends AbstractEntity<Long>{
     @Column
     private String cnpj;
 
-    @OneToMany // é um relacionamento unidimencional
+    /*@OneToMany // é um relacionamento unidirecional
     @JoinColumn(name = "id_fornecedor_fk")
-    private List<Produto> produto;
+    private List<Produto> produto;*/
 
     
 }

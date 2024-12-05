@@ -26,6 +26,9 @@ public class Produto extends AbstractEntity<Long>{
     @OneToMany(mappedBy = "produto", cascade = CascadeType.ALL)
     private List<VendaItens> vendaIt;
 
+    @ManyToOne
+    private Fornecedor fornecedor;
+
     @Override
     public String toString() {
         return "Produto [categoria=" + categoria + ", nomeProduto=" + nomeProduto + ", dataFabricacao=" + dataFabricacao

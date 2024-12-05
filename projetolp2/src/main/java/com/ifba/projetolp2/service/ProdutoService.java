@@ -28,12 +28,6 @@ public class ProdutoService {
         repPro.deleteById(id);
     }
 
-    /*public void controleEstoque(Long idProduto, int qtdProduto){
-        Produto pd = buscarPorId(idProduto);
-        pd.set
-        
-    }*/
-
     public Optional<Produto> buscarPorId(Long id){
         return repPro.findById(id);
     }
@@ -41,5 +35,23 @@ public class ProdutoService {
     public List<Produto> buscarTodos(){
         return repPro.findAll();
     }
+
+    /*public void controlarEstoque(Long idProduto, int quantidadeRetirada) {
+        Produto produto = buscarPorId(idProduto);
+
+        if (produto != null) {
+            int estoqueAtual = produto.getQtdProduto();
+
+            if (estoqueAtual >= quantidadeRetirada) {
+                produto.setQtdProduto(estoqueAtual - quantidadeRetirada);
+                atualizar(produto);
+                System.out.println("Estoque atualizado com sucesso. Estoque restante: " + produto.getQtdProduto());
+            } else {
+                System.out.println("Estoque insuficiente. Quantidade disponível: " + estoqueAtual);
+            }
+        } else {
+            System.out.println("Produto não encontrado.");
+        }
+    }*/
 
 }

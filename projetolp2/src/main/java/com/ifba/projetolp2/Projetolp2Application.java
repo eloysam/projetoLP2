@@ -31,31 +31,14 @@ public class Projetolp2Application {
 	public CommandLineRunner demo(VendaService serVen, ItensEntradaService serItEn, ProdutoService serPro, EntradaService serEnt, FornecedorService serFor, UsuarioService serUs, VendaItensService serVenIt) {
 		return (args) -> {
 
-			Venda v = new Venda();
-			//v.setId(Long.valueOf(2));
-			v.setValorVenda(59.6);
-			v.setDataVenda("23/12/23");
-			serVen.salvar(v);
-			//serVen.atualizar(v);
-			System.out.println(serVen.buscarTodos());
-
-			Entrada en = new Entrada();
-			en.setData("23/10/24");
-			//en.setId(Long.valueOf(2));
-			en.setValor(1200.30);
-			serEnt.salvar(en);
-			//serEnt.atualizar(en);
+			Fornecedor f = new Fornecedor();
+			f.setNome("Loreal");
+			f.setTelefone("90836421");
+			f.setCnpj("12345678901234");
+			f.setEndereco("rua 1");
+			serFor.salvar(f);
+			// serFor.atualizar(f);
 			System.out.println(serEnt.buscarTodos());
-
-			Itens_entrada itEn = new Itens_entrada();
-			//itEn.setEntrada(null);
-			//itEn.setId(Long.valueOf(1));
-			//itEn.setIdProduto(null);
-			itEn.setQuantidade(123);
-			itEn.setValorUnitario(12.20);
-			serItEn.salvar(itEn);
-			//serItEn.atualizar(itEn);
-			System.out.println(serItEn.buscarTodos());
 
 			Produto p = new Produto();
 			p.setNomeProduto("shampoo Elseve");
@@ -63,25 +46,47 @@ public class Projetolp2Application {
 			p.setCategoria("cabelo");
 			p.setDataFabricacao("2019/09/20");
 			p.setDataValidade("2021/10/15");
+			p.setFornecedor(f);
 			serPro.salvar(p);
-			//serPro.atualizar(p);
+			// serPro.atualizar(p);
 			System.out.println(serPro.buscarTodos());
 
-			Fornecedor f = new Fornecedor();
-			f.setNome("Loreal");
-			f.setTelefone("90836421");
-			f.setCnpj("12345678901234");
-			f.setEndereco("rua 1");
-			serFor.salvar(f);
-			//serFor.atualizar(f);
-			System.out.println(serEnt.buscarTodos());
+			Entrada en = new Entrada();
+			en.setData("23/10/24");
+			//en.setId(Long.valueOf(2));
+			en.setValor(1200);
+			serEnt.salvar(en);
+			//serEnt.atualizar(en);
+			//System.out.println(serEnt.buscarTodos());
+
+			Itens_entrada itEn = new Itens_entrada();
+			//itEn.setEntrada(null);
+			//itEn.setId(Long.valueOf(1));
+			//itEn.setIdProduto(null);
+			itEn.setProduto(p);
+			itEn.setEntrada(en);
+			itEn.setQuantidade(123);
+			itEn.setValorUnitario(12);
+			serItEn.salvar(itEn);
+			//serItEn.atualizar(itEn);
+			//System.out.println(serItEn.buscarTodos());
+
+			Venda v = new Venda();
+			// v.setId(Long.valueOf(2));
+			v.setValorVenda(45);
+			v.setDataVenda("23/12/23");
+			serVen.salvar(v);
+			// serVen.atualizar(v);
+			//System.out.println(serVen.buscarTodos());
 
 			VendaItens venIt = new VendaItens();
-			venIt.setValorUnitario(20.7);
+			venIt.setValorUnitario(20);
 			venIt.setQuantidade(2);
+			venIt.setVenda(v);
+			venIt.setProduto(p);
 			serVenIt.salvar(venIt);
 			//serVenIt.atualizar(venIt);
-			System.out.println(serVenIt.buscarTodos());
+			//System.out.println(serVenIt.buscarTodos());
 
 			Usuario u = new Usuario();
 			u.setNome("João");
@@ -90,7 +95,7 @@ public class Projetolp2Application {
 			u.setTipoUsuario("Gerente");
 			serUs.salvar(u);
 			//serUs.atualizar(u);
-			System.out.println(serUs.buscarTodos());
+			//System.out.println(serUs.buscarTodos());
 
 		};
 	}
