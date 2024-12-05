@@ -9,7 +9,7 @@ import lombok.Data;
 public class VendaItens extends AbstractEntity<Long> {
    
     @Column
-    private int valorUnitario;
+    private double valorUnitario;
     @Column
     private int quantidade;
    

@@ -14,9 +14,9 @@ public class Produto extends AbstractEntity<Long>{
     @Column
     private String nomeProduto;
     @Column
-    private Date dataFabricacao;
+    private String dataFabricacao;
     @Column
-    private Date dataValidade;
+    private String dataValidade;
     @Column
     private int qtdProduto;
 

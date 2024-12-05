@@ -14,7 +14,11 @@ public class Fornecedor extends AbstractEntity<Long>{
     @Column
     private String nome;
     @Column
-    private String tipoDeEntrega;
+    private String tipoDeProdutoFornecido;
+    @Column
+    private String telefone;
+    @Column
+    private String cnpj;
 
     @OneToMany // é um relacionamento unidimencional
     @JoinColumn(name = "id_fornecedor_fk")

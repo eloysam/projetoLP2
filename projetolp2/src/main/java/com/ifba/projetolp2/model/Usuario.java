@@ -13,9 +13,9 @@ public class Usuario extends AbstractEntity<Long> {
     @Column
     private String tipoUsuario;
     @Column
-    private int senha;
+    private String senha;
     @Column
-    private Date dataCadastro;
+    private String dataCadastro;
 
     @Override
     public String toString() {
