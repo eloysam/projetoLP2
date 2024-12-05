@@ -29,7 +29,11 @@ public class Projetolp2Application {
 			v.setValorVenda(59.6);
 			v.setDataVenda("23/12/23");
 			serVen.salvar(v);
+<<<<<<< HEAD
 			serVen.atualizar(v);
+=======
+			System.out.println("Listagem das vendas: " + serVen.buscarTodos());
+>>>>>>> 6e3afaebe3a148d9313445eca159d2833a792d6c
 
 			Entrada en = new Entrada();
 			en.setData("23/10/24");
@@ -47,8 +51,12 @@ public class Projetolp2Application {
 			serItEn.salvar(itEn);
 			serItEn.atualizar(itEn);
 
+<<<<<<< HEAD
 			System.out.println(serVen.buscarTodos());
 
+=======
+			//System.out.println(serVen.buscarTodos());
+>>>>>>> 6e3afaebe3a148d9313445eca159d2833a792d6c
 		};
 	}
 

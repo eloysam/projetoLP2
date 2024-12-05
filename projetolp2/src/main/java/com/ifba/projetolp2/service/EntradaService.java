@@ -17,6 +17,8 @@ public class EntradaService {
     @Autowired
     private IEntradaRepository repEntrada;
 
+    // métodos básicos do CROUD + métodos específicos
+    
     public void salvar(Entrada ent){
         repEntrada.save(ent);
     }
