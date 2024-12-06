@@ -70,4 +70,6 @@ public class VendaItensService {
         }
     }
 
+    //serVenIt.retirarItens(3L); para fazer o teste
+
 }

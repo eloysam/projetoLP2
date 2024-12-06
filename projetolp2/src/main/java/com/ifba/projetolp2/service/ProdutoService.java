@@ -57,4 +57,6 @@ public class ProdutoService {
         }
     }
 
+    // controleEstoque(1L, 7); para teste
+
 }
