@@ -37,7 +37,7 @@ public class ProdutoService {
     }
 
     public void controlarEstoque(Long idProduto, int qtdRetirada) {
-        Optional<Produto> produtoOptional = buscarPorId(idProduto); // Busca o produto no repositório utilizando o id fornecido e encapsula o resultado em um Optional
+        Optional<Produto> produtoOptional = buscarPorId(idProduto); // Busca o produto no repositório utilizando o id sfornecido e encapsula o resultado em um Optional
 
         if (produtoOptional.isPresent()) { // Verifica se o produto foi encontrado no Optional, o isPresente -> é usado em Java para verificar se um objeto encapsulado em um Optional está presente ou não retornando um valor bool
             Produto produto = produtoOptional.get(); // Extrai o objeto Produto do Optional
