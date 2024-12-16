@@ -97,7 +97,10 @@ public class Projetolp2Application {
 			//serUs.atualizar(u);
 			//System.out.println(serUs.buscarTodos());
 
+
 		};
+
+		//controleEstoque(1L, 7);
 	}
 
 }
